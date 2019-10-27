@@ -1,0 +1,15 @@
+Week2 
+
+Discussed and formed a 4-member team, discussed briefly about the topic.
+
+Week3
+
+Reached an agreement of choosing topic 7 web protral. Started wiriting the proposal part II and III and the 'Schedual'
+
+Week4
+Design the database schema, implement the database and design the page.
+
+Week6
+Front end has been connected with the back-end, finished sign-in, log-in, sign-up, can maintain the session. Start rendering the products with pagenation.
+
+Week7
