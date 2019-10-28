@@ -13,3 +13,4 @@ Week6
 Front end has been connected with the back-end, finished sign-in, log-in, sign-up, can maintain the session. Start rendering the products with pagenation.
 
 Week7
+
