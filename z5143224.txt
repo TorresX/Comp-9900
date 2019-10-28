@@ -1,0 +1,17 @@
+Week 2
+
+We founded the group, 4 rookies together, so we name it group Rookies. We had a strong discussion about choosing which topic as our project. Wenbo suggested project1 because it's not that hard to achieve, while I supposed by doing project7, we can learn a lot about useful career skills.
+
+Week 3
+
+We finally decided to do project7. I'm going to make backend with Golang instead of Python, that I believe Golang will become the first backend language and take place of java several years later. 
+We also discussed about what functions we are going to implemented, and wrote the proposal together. I wrote the "Scope & Technicals details" and epics of "Login+Register" and "Login+Register" part.
+ 
+Week 4
+
+In this week we made a discussion about how to manage the database, how many tables and attributes need to have, to satisfy front end's requirements. After that we decided to gain about 120 house data, and I focus on finding the renting message in Parramatta, Rhodes and Burwood, with all the attributes we needed. Mainly from Airbnb and Real Estate. In total grabbed 25 accommodation messages.
+
+Week 5
+
+I have to start to hand on server part. Followed the course from Udemy about web develop of backend, I learnt to start a router which can handle multi request(GET and POST) and respond different messages. The router is based on TCP that can fully detect the headers of the receiving package, and it can compile the respond header. The router can also based on https, but in that way, manage the headers become difficult. 
+And I also review the knowledge from 9311, going to build up the database and store all the datas into it.
