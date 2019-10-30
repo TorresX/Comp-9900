@@ -9,3 +9,11 @@ We finally agreed to do topic 7. Then we started to write the proposal. I was in
 Week 4
 
 In this week, we collected some information of properties in different restricts. I was assigned to take charge of Double Bay, Rose Bay, Kensington, Randwick, Kingsford. Besides, I also learnt some knowledges about CSS and HTML.
+
+Week 5
+
+
+
+
+Week 6
+Front end has been connected to the back-end. We have finished the login and signup page authentication.
