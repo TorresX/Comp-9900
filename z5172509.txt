@@ -12,7 +12,7 @@ In this week, we collected some information of properties in different restricts
 
 Week 5
 
-
+We have implemented the database and the design of data schema.
 
 
 Week 6
