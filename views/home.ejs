@@ -1,0 +1,21 @@
+
+<%- include header -%>
+
+<div class="hero-image">
+    <div class="hero-text container">
+        <div class="hero-h1">
+            <h1>Start booking on Rookies to explore the world</h1>
+        </div>
+        <div class="search" id="search" data-spy="sticky" data-exit="false" data-target="#layout-sticky">
+            <form action="/properties" method="post">
+                <input type="text" name="place" placeholder="Destination">
+                <input type="date" name="checkinDay">
+                <input type="date" name="checkoutDay">
+                <button class="btn btn-primary" type="submit">Check</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include footer -%>

@@ -1,0 +1,244 @@
+
+<% include header %>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3"><%= property.address %>
+        <!--        <small>by-->
+        <!--            <a href="#">Start Bootstrap</a>-->
+        <!--        </small>-->
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/properties">Properties</a>
+        </li>
+        <li class="breadcrumb-item active"><%= property.suburb %></li>
+    </ol>
+
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+            <% if (property.images){ %>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: auto;">
+                            <img src="/<%=property.images[0]%>" class="d-block w-100" alt="...">
+                        </div>
+                        <% const renderImages = property.images.slice(1,property.images.length) %>
+                        <% renderImages.forEach(function (image) { %>
+                            <div class="carousel-item" style="height: auto;">
+                                <% console.log(`property image: ${image}`)%>
+                                <img src="/<%= image %>" class="d-block w-100" alt="...">
+                            </div>
+                        <%})%>
+<!--                        <div class="carousel-item" style="height: 0;">-->
+<!--                            <img src="http://placehold.it/750x300" class="d-block w-100" alt="...">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-item" style="height: 0;">-->
+<!--                            <img src="http://placehold.it/750x300" class="d-block w-100" alt="...">-->
+<!--                        </div>-->
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            <%}else{%>
+                    <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
+                <%}%>
+            <!-- Preview Image -->
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p>Posted on January 1, 2017 at 12:00 PM</p>
+
+            <hr>
+
+            <!-- Post Content -->
+            <p class="lead">
+                Bedrooms:
+                <%= property.bedroom %>
+            </p>
+            <p class="lead">
+                Bathroom:
+                <%= property.bathroom %>
+            </p>
+
+            <p class="lead">
+                Garage:
+                <%= property.garage %>
+            </p>
+            <p class="lead">
+                Price:
+                <%= property.price %>
+            </p>
+
+
+            <hr>
+
+<!--            &lt;!&ndash; Comments Form &ndash;&gt;-->
+<!--            <div class="card my-4">-->
+<!--                <h5 class="card-header">Leave a Comment:</h5>-->
+<!--                <div class="card-body">-->
+<!--                    <form method="post" onsubmit="return doComment(this);">-->
+<!--                        <input type="hidden" name="post_id" value="<%= property._id %>" >-->
+<!--                        <div class="form-group">-->
+<!--                            <input class="form-control" name="username">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <textarea class="form-control" rows="3" name="comment"></textarea>-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--            <script>-->
+<!--                function doComment(form) {-->
+<!--                    $.ajax({-->
+<!--                        url: "/do-comment",-->
+<!--                        method: "POST",-->
+<!--                        data: {username: form.username.value, comment: form.comment.value,-->
+<!--                            post_id: form.post_id.value},-->
+<!--                        success: function (respose) {-->
+<!--                            alert(respose);-->
+<!--                        }-->
+<!--                    })-->
+<!--                    return false;-->
+<!--                }-->
+<!--            </script>-->
+
+
+
+
+
+
+
+
+
+
+            <!-- Single Comment -->
+            <!--            new post should be at the beginning -->
+<!--            <% if (property.comments){%>-->
+<!--                <% property.comments = property.comments.reverse() %>-->
+<!--                <% property.comments.forEach(function (comment) {  %>-->
+<!--                <div class="media mb-4">-->
+<!--                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">-->
+<!--                    <div class="media-body">-->
+<!--                        <h5 class="mt-0">-->
+<!--                            <%=property.username %>-->
+<!--                        </h5>-->
+<!--                        <%= property.comment %>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <% }) %>-->
+<!--            <% }%>-->
+            <!--            &lt;!&ndash; Comment with nested comments &ndash;&gt;-->
+            <!--            <div class="media mb-4">-->
+            <!--                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">-->
+            <!--                <div class="media-body">-->
+            <!--                    <h5 class="mt-0">Commenter Name</h5>-->
+            <!--                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+
+            <!--                    <div class="media mt-4">-->
+            <!--                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">-->
+            <!--                        <div class="media-body">-->
+            <!--                            <h5 class="mt-0">Commenter Name</h5>-->
+            <!--                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+
+            <!--                    <div class="media mt-4">-->
+            <!--                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">-->
+            <!--                        <div class="media-body">-->
+            <!--                            <h5 class="mt-0">Commenter Name</h5>-->
+            <!--                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Search Widget -->
+            <div class="card mb-4">
+                <h5 class="card-header">Search</h5>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Categories</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#">Web Design</a>
+                                </li>
+                                <li>
+                                    <a href="#">HTML</a>
+                                </li>
+                                <li>
+                                    <a href="#">Freebies</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#">JavaScript</a>
+                                </li>
+                                <li>
+                                    <a href="#">CSS</a>
+                                </li>
+                                <li>
+                                    <a href="#">Tutorials</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Side Widget</h5>
+                <div class="card-body">
+                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<% include footer%>

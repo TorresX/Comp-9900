@@ -1,0 +1,162 @@
+<% include header %>
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Blog Home Two
+        <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Properties</li>
+    </ol>
+
+    <!-- Blog Post -->
+    <div id="posts">
+        <% properties.reverse().forEach(function (property) { %>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="properties/<%= property._id%>">
+
+                                <% if (property.images){ %>
+                                    <% console.log(property.images[0])%>
+                                    <img class="img-fluid rounded" src="static/propertyImages/<%= property.images[0] %>" alt="">
+                                <%}else{%>
+                                    <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
+                                <%}%>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <h2 class="card-title">
+                                <%= property.address %>
+                            </h2>
+                            <a href="properties/<%= property._id %>" class="btn btn-primary">Book now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <!--            <div class="card-footer text-muted">-->
+                <!--                Posted on January 1, 2017 by-->
+                <!--                <a href="#">Start Bootstrap</a>-->
+                <!--            </div>-->
+            </div>
+        <%})%>
+    </div>
+    <!--    &lt;!&ndash; Blog Post &ndash;&gt;-->
+    <!--    <div class="card mb-4">-->
+    <!--        <div class="card-body">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <a href="#">-->
+    <!--                        <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">-->
+    <!--                    </a>-->
+    <!--                </div>-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <h2 class="card-title">Post Title</h2>-->
+    <!--                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
+    <!--                    <a href="#" class="btn btn-primary">Read More &rarr;</a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="card-footer text-muted">-->
+    <!--            Posted on January 1, 2017 by-->
+    <!--            <a href="#">Start Bootstrap</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--    &lt;!&ndash; Blog Post &ndash;&gt;-->
+    <!--    <div class="card mb-4">-->
+    <!--        <div class="card-body">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <a href="#">-->
+    <!--                        <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">-->
+    <!--                    </a>-->
+    <!--                </div>-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <h2 class="card-title">Post Title</h2>-->
+    <!--                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
+    <!--                    <a href="#" class="btn btn-primary">Read More &rarr;</a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="card-footer text-muted">-->
+    <!--            Posted on January 1, 2017 by-->
+    <!--            <a href="#">Start Bootstrap</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--    &lt;!&ndash; Blog Post &ndash;&gt;-->
+    <!--    <div class="card mb-4">-->
+    <!--        <div class="card-body">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <a href="#">-->
+    <!--                        <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">-->
+    <!--                    </a>-->
+    <!--                </div>-->
+    <!--                <div class="col-lg-6">-->
+    <!--                    <h2 class="card-title">Post Title</h2>-->
+    <!--                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
+    <!--                    <a href="#" class="btn btn-primary">Read More &rarr;</a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="card-footer text-muted">-->
+    <!--            Posted on January 1, 2017 by-->
+    <!--            <a href="#">Start Bootstrap</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--    &lt;!&ndash; Pagination &ndash;&gt;-->
+    <!--    <ul class="pagination justify-content-center mb-4">-->
+    <!--        <li class="page-item">-->
+    <!--            <a class="page-link" href="#">&larr; Older</a>-->
+    <!--        </li>-->
+    <!--        <li class="page-item disabled">-->
+    <!--            <a class="page-link" href="#">Newer &rarr;</a>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+
+</div>
+
+</div>
+<!-- /.container -->
+
+<script>
+    var socket = io();
+    socket.on("new_post",function (formData) {
+        console.log(formData);
+        var html = ""
+        html += '   <div class="card mb-4">';
+        html += '   <div class="card-body">';
+        html += '   <div class="row">';
+        html += '   <div class="col-lg-6">';
+        html += '   <a href="properties/' +  formData._id+ '">';
+
+        if (formData.images) {
+            html += '   <img class="img-fluid rounded" src="' + formData.images[0] + '" alt="">';
+        }else{
+            html += '   <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">';
+       }
+        html += '   </a>';
+        html += '   </div>';
+        html += '   <div class="col-lg-6">';
+        html += '   <h2 class="card-title">';
+        html +=  formData.address;
+          html += ' </h2>';
+        html += '   <a href="properties/' + formData._id + '" class="btn btn-primary">Book now &rarr;</a>';
+       html += '</div>';
+       html += '</div>';
+       html += '</div>';
+      html += '</div>';
+
+        $ ("#posts").prepend(html);
+    });
+</script>
+
+<% include footer%>

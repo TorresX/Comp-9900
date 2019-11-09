@@ -1,0 +1,168 @@
+<% include header%>
+<div class="container-fluid">
+    <form method="post" onsubmit="return doPost(this);">
+        <div class="form-group">
+            <label>Address:</label>
+            <input id="address" name="address" class="form-control" placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label>Suburb:</label>
+            <textarea id="suburb" name="suburb" class="form-control" placeholder="Suburb"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Bedroom:</label>
+            <textarea id="bedroom" name="bedroom" class="form-control" placeholder="Bedroom"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Bathroom:</label>
+            <textarea id="bathroom" name="bathroom" class="form-control" placeholder="Bathroom"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Garage:</label>
+            <textarea id="garage" name="garage" class="form-control" placeholder="Garage"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <textarea id="price" name="price" class="form-control" placeholder="Price"></textarea>
+        </div>
+        <!--Bootstrap model plug-in-->
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+            Upload image
+        </button>
+
+        <input id="post-button" type="submit" class="btn btn-info" value="Post" onClick="return empty()">
+    </form>
+</div>
+
+
+
+<!-- ajax request to submit a post-->
+<script>
+    function doPost(form) {
+        var formData = {address: form.address.value,
+                        suburb: form.suburb.value,
+                        bedroom:form.bedroom.value,
+                        bathroom:form.bathroom.value,
+                        garage:form.garage.value,
+                        price:form.price.value,
+                        images: imagesPath}
+        $.ajax({
+            url: "/do-post",
+            method: "POST",
+            data: formData,
+            success: function (response) {
+                alert(response.text);
+                // document.getElementById("post-button").prop('disabled', true);
+                console.log(response);
+                formData._id = response._id;
+
+                var socket = io();
+                socket.emit("new_post", formData);
+            }
+        })
+        // prevent the form from submitting
+        return false;
+    }
+
+    function empty() {
+        if (document.getElementById("address").value == "" ||
+            document.getElementById("suburb").value == "" ||
+            document.getElementById("bedroom").value == "" ||
+            document.getElementById("bathroom").value == "" ||
+            document.getElementById("garage").value == "" ||
+            document.getElementById("price").value == "" ){
+            alert("Enter valid property attributes");
+            return false;
+        };
+    }
+</script>
+
+<!-- Modal -->
+<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog"
+     aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+
+            <div class = "modal-header">
+                <h4 class = "modal-title" id = "myModalLabel">
+                    Upload image
+                </h4>
+
+                <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                    &times;
+                </button>
+            </div>
+
+            <div class = "modal-body">
+                <!--                The upload form should be inside the model body-->
+                <!--                encodeing type should be specified otherwise image will not be uploaded-->
+                <form method="post" enctype="multipart/form-data" id="form-upload" class="form-loop">
+                    <div class="form-group">
+                        <input type="file" name="file1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file3" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file4" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file5" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file6" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file7" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file8" class="form-control">
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Upload"/>
+                </form>
+            </div>
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+</div><!-- /.modal -->
+
+
+<script>
+    var  imagesPath = [];
+    $("#form-upload").on("submit", function (e) {
+        //prevent form from submitting
+        e.preventDefault();
+        $.ajax({
+            url: "/do-upload-image",
+            method: "POST",
+            data: new FormData(this),
+            // the data type you are sending to server making it false make sure you can send data anytime
+            contentType: false,
+            cache: false,
+            // processData is data you are receiving from server, makeing it to false
+            // will make sure your form data will not be converted to string
+            processData: false,
+            success: function (response) {
+                console.log(response);
+                imagesPath = response;
+                console.log("response: ",response);
+                console.log("got image uploaded response")
+                // hide the bootstrap model when the image successfully uploaded
+                $("#myModal").modal("hide");
+            }
+
+
+        })
+    })
+
+</script>
+
+
+<% include footer%>

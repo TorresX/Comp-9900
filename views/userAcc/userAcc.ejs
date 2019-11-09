@@ -1,0 +1,327 @@
+<% include header %>
+
+<div class="row">
+    <div class="col-2">
+        <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action list-group-item-dark" href="/user">My Profile</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark" href="/user">My reservation</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark" href="/user" >Settings</a>
+            <a class="list-group-item list-group-item-action " href="/logout" >Log out</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+        </div>
+    </div>
+</div>
+
+<% include footer %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="page">-->
+<!--    <div id="l_container" class="push_when_sidepanel_is_open">-->
+<!--        <div id="l_content" class="l_grid">-->
+<!--            <div class="top_container">-->
+<!--                <ul class="breadcrumbs">-->
+<!--                    <li class="breadcrumbs_back_link">-->
+<!--                        <a href="#" title="My Account">My Account</a>-->
+<!--                    </li>-->
+<!--                    <li><i class="fas fa-arrow-right"></i></li>-->
+<!--                    <li class="home">-->
+<!--                        <a href="/" title="Home">Home</a>-->
+<!--                    </li>-->
+<!--                    <li><i class="fas fa-arrow-right"></i></li>-->
+<!--                    <li class="My Account">-->
+<!--                        <a href="/customer/landlordAcc/" title="My Account">My Account</a>-->
+<!--                    </li>-->
+<!--                    <li><i class="fas fa-arrow-right"></i></li>-->
+<!--                    <li class="My Dashboard breadcrumbs_last">-->
+<!--                        My Dashboard-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--            <div class="main-container col2-left-layout">-->
+<!--                <div class="main">-->
+<!--                    <div class="col-left sidebar col-left-first">-->
+<!--                        <div class="block block-landlordAcc">-->
+<!--                            <div class="block-title">-->
+<!--                                <strong>-->
+<!--                                    <span>My Account</span>-->
+<!--                                </strong>-->
+<!--                            </div>-->
+<!--                            <div class="block-content">-->
+<!--                                <ul>-->
+<!--                                    <li class="current">-->
+<!--                                        <a href="#"><strong>Account Dashboard</strong></a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">Account Information</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">Address Book</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">My orders</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">My products review</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">My email news</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">My returns</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">Store credit</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">Gift card</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">Logout</a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-main">-->
+<!--                        <div class="my-landlordAcc">-->
+<!--                            <div class="customer-offers dashboard">-->
+<!--                                <div class="customer-offers-content">-->
+<!--                                    <div class="page-title">-->
+<!--                                        <h1>Hello, Yingzheng Wang!</h1>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="customer-offers-sideblock"></div>-->
+<!--                            </div>-->
+<!--                            <div class="dashboard">-->
+<!--                                <div class="page-title">-->
+<!--                                    <h1></h1>-->
+<!--                                </div>-->
+<!--                                <div class="box-landlordAcc box-recent">-->
+<!--                                    <div class="box-head">-->
+<!--                                        <h2>Recent Orders</h2><a href="#">View All</a>-->
+<!--                                    </div>-->
+<!--                                    <table class="stacktable small-only"><tbody><tr></tr><tr><th class="st-head-row st-head-row-main" colspan="2">Order #</th></tr><tr></tr><tr><th class="st-head-row" colspan="2">9900067707</th></tr><tr><td class="st-key">Date</td><td class="st-val"><span class="nobr">15/10/2019</span></td></tr><tr><td class="st-key">Ship To</td><td class="st-val">Yingzheng Wang</td></tr><tr><td class="st-key"><span class="nobr">Order Total</span></td><td class="st-val"><span class="price">$99.00</span></td></tr><tr><td class="st-key">Status</td><td class="st-val"><em>Complete</em></td></tr><tr><td class="st-key">&nbsp;</td><td class="st-val">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/134034/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td></tr><tr></tr><tr><th class="st-head-row" colspan="2">9900040719</th></tr><tr><td class="st-key">Date</td><td class="st-val"><span class="nobr">16/03/2019</span></td></tr><tr><td class="st-key">Ship To</td><td class="st-val">Yingzheng Wang</td></tr><tr><td class="st-key"><span class="nobr">Order Total</span></td><td class="st-val"><span class="price">$49.50</span></td></tr><tr><td class="st-key">Status</td><td class="st-val"><em>Complete</em></td></tr><tr><td class="st-key">&nbsp;</td><td class="st-val">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/80600/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td></tr><tr></tr><tr><th class="st-head-row" colspan="2">9900014686</th></tr><tr><td class="st-key">Date</td><td class="st-val"><span class="nobr">14/05/2018</span></td></tr><tr><td class="st-key">Ship To</td><td class="st-val">Yingzheng Wang</td></tr><tr><td class="st-key"><span class="nobr">Order Total</span></td><td class="st-val"><span class="price">$31.50</span></td></tr><tr><td class="st-key">Status</td><td class="st-val"><em>Complete</em></td></tr><tr><td class="st-key">&nbsp;</td><td class="st-val">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/29072/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td></tr></tbody></table>-->
+<!--                                    <table class="data-table standard_table js_stacktable stacktable large-only" id="my-orders-table">-->
+<!--                                        <colgroup><col width="1">-->
+<!--                                            <col width="1">-->
+<!--                                            <col>-->
+<!--                                            <col width="1">-->
+<!--                                            <col width="1">-->
+<!--                                            <col width="1">-->
+<!--                                        </colgroup><thead>-->
+<!--                                        <tr class="first last">-->
+<!--                                            <th>Order #</th>-->
+<!--                                            <th>Date</th>-->
+<!--                                            <th>Ship To</th>-->
+<!--                                            <th><span class="nobr">Order Total</span></th>-->
+<!--                                            <th>Status</th>-->
+<!--                                            <th>&nbsp;</th>-->
+<!--                                        </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                        <tr class="first odd">-->
+<!--                                            <td>9900067707</td>-->
+<!--                                            <td><span class="nobr">15/10/2019</span></td>-->
+<!--                                            <td>Yingzheng Wang</td>-->
+<!--                                            <td><span class="price">$99.00</span></td>-->
+<!--                                            <td><em>Complete</em></td>-->
+<!--                                            <td class="a-center last">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/134034/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr class="even">-->
+<!--                                            <td>9900040719</td>-->
+<!--                                            <td><span class="nobr">16/03/2019</span></td>-->
+<!--                                            <td>Yingzheng Wang</td>-->
+<!--                                            <td><span class="price">$49.50</span></td>-->
+<!--                                            <td><em>Complete</em></td>-->
+<!--                                            <td class="a-center last">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/80600/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr class="last odd">-->
+<!--                                            <td>9900014686</td>-->
+<!--                                            <td><span class="nobr">14/05/2018</span></td>-->
+<!--                                            <td>Yingzheng Wang</td>-->
+<!--                                            <td><span class="price">$31.50</span></td>-->
+<!--                                            <td><em>Complete</em></td>-->
+<!--                                            <td class="a-center last">-->
+<!--                        <span class="nobr">-->
+<!--                        <a href="https://www.championusa.com.au/sales/order/view/order_id/29072/">View Order</a>-->
+<!--                        </span>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                    <script type="text/javascript">decorateTable('my-orders-table')</script>-->
+<!--                                </div>-->
+<!--                                <div class="box-landlordAcc box-info">-->
+<!--                                    <div class="col2-set">-->
+<!--                                        <div class="col-1">-->
+<!--                                            <div class="box">-->
+<!--                                                <div class="box-title">-->
+<!--                                                    <h3>Contact Information</h3>-->
+<!--                                                </div>-->
+<!--                                                <div class="box-content">-->
+<!--                                                    <p>Yingzheng Wang</p>-->
+<!--                                                    <p>iloveldt110323@gmail.com</p>-->
+<!--                                                    <p class="none"><a href="https://www.championusa.com.au/customer/account/edit/" class="btn btn_small">Edit Details</a> <a href="https://www.championusa.com.au/customer/account/edit/changepass/1/" class="btn btn_small">Change Password</a></p>-->
+<!--                                                    <p></p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-2">-->
+<!--                                            <div class="box">-->
+<!--                                                <div class="box-title">-->
+<!--                                                    <h3>MY EMAIL NEWS</h3>-->
+<!--                                                </div>-->
+<!--                                                <div class="box-content">-->
+<!--                                                    <p>-->
+<!--                                                        You are not subscribed to Champion's lastest news and offers.                                    </p>-->
+<!--                                                    <p class="none">-->
+<!--                                                        <a href="https://www.championusa.com.au/newsletter/manage/" class="btn btn_small">Edit Newsletters</a>-->
+<!--                                                    </p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col2-set">-->
+<!--                                        <div class="box">-->
+<!--                                            <div class="box-title">-->
+<!--                                                <h3>Address Book <a href="https://www.championusa.com.au/customer/address/">- Manage Addresses</a></h3>-->
+<!--                                            </div>-->
+<!--                                            <div class="box-content">-->
+<!--                                                <div class="col-1">-->
+<!--                                                    <h4>Default Billing Address</h4>-->
+<!--                                                    <address>-->
+<!--                                                        Yingzheng Wang<br>-->
+
+<!--                                                        Unit 11<br>-->
+<!--                                                        191 Gardeners Road<br>-->
+
+
+<!--                                                        Eastlakes,  New South Wales, 2018<br>-->
+<!--                                                        Australia<br>-->
+
+
+<!--                                                        <br>-->
+<!--                                                    </address>-->
+<!--                                                    <a href="https://www.championusa.com.au/customer/address/edit/id/2396/" class="btn btn_small">Edit Address</a>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-2">-->
+<!--                                                    <h4>Default Shipping Address</h4>-->
+<!--                                                    <address>-->
+<!--                                                        Yingzheng Wang<br>-->
+
+<!--                                                        Unit 11<br>-->
+<!--                                                        191 Gardeners Road<br>-->
+
+
+<!--                                                        Eastlakes,  New South Wales, 2018<br>-->
+<!--                                                        Australia<br>-->
+
+
+<!--                                                        <br>-->
+<!--                                                    </address>-->
+<!--                                                    <a href="https://www.championusa.com.au/customer/address/edit/id/2396/" class="btn btn_small">Edit Address</a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="box-landlordAcc box-recent">-->
+<!--                                <div class="box-head">-->
+<!--                                    <h2>Recent Bonds &amp; Co. Orders</h2>-->
+<!--                                </div>-->
+<!--                                <p>You have placed no Bonds &amp; Co. orders.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

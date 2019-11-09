@@ -1,0 +1,27 @@
+{
+  "name": "rookie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.6",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "socket.io": "^2.3.0"
+  }
+}
